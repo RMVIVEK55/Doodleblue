@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ActivityCoinAddBinding">
+
+        <variable
+            name="rcCoinadapter"
+            type="com.doodleblue.project.coins.adapter.CoinRcAdapter" />
+
+        <variable
+            name="laycmv"
+            type="com.doodleblue.project.coins.viewmodel.CoinViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        tools:context=".coins.activity.MainActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_data_found"
+            android:textAlignment="center"
+            android:textSize="@dimen/sp20"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_coin_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp25"
+            android:layout_marginRight="@dimen/dp20"
+            android:background="@drawable/round_search_corner"
+            android:drawableEnd="@drawable/ic_search"
+            android:hint="@string/search_coins"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingTop="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10"
+            android:singleLine="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_lab_title"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:paddingLeft="@dimen/dp30"
+            android:text="@string/name"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txt_lab_price"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_lab_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_coin_search" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_lab_price"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/price"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintRight_toLeftOf="@+id/txt_lab_change"
+            app:layout_constraintTop_toBottomOf="@+id/edt_coin_search" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_lab_change"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:paddingRight="@dimen/dp10"
+            android:text="@string/change"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_coin_search" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_lab_price">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_coin"
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp0"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                app:setAdapter="@{rcCoinadapter}" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

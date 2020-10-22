@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Doodleblue</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="change">Change</string>
+    <string name="no_data_found">No data found</string>
+    <string name="search_coins">Search Coins...</string>
+    <string name="no_network">Please check network connection</string>
+    <string name="loading">Data Loading...</string>
+</resources>

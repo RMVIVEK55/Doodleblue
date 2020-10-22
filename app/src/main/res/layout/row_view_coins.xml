@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="AdapterCoinAddBinding">
+
+        <variable
+            name="Coinadapter"
+            type="com.doodleblue.project.retrofit.model.ApiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+
+
+        android:paddingBottom="10dp">
+
+        <View
+
+            android:id="@+id/view_lab_line"
+            android:layout_width="match_parent"
+
+            android:layout_height="@dimen/dp1"
+
+            android:background="@color/colorGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_img"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="@dimen/dp5"
+
+android:textColor="@color/colorBlack"
+            android:background="@drawable/circle_bg_txt"
+            android:gravity="center"
+
+android:layout_marginTop="@dimen/dp10"
+            android:text="@{Coinadapter.symbol}"
+
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toStartOf="@+id/txt_coin_name"
+            app:layout_constraintHorizontal_bias="0.0"
+
+            app:layout_constraintLeft_toLeftOf="@+id/txt_coin_name"
+
+            app:layout_constraintRight_toLeftOf="@+id/txt_num"
+            app:layout_constraintStart_toEndOf="@+id/txt_num"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/dp20"
+
+
+            android:layout_marginTop="@dimen/dp25"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_coin_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp25"
+            android:textSize="@dimen/sp16"
+            android:paddingLeft="@dimen/dp5"
+            android:textColor="@color/colorBlack"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:text="@{Coinadapter.name}"
+            app:layout_constraintEnd_toStartOf="@+id/txt_price"
+            app:layout_constraintHorizontal_bias="0.0"
+
+            app:layout_constraintLeft_toLeftOf="@+id/txt_price"
+            app:layout_constraintRight_toLeftOf="@+id/txt_img"
+
+            app:layout_constraintStart_toEndOf="@+id/txt_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_price"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp25"
+            android:textSize="@dimen/sp16"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintRight_toLeftOf="@+id/txt_change"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_change"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp25"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/sp16"
+
+            android:textColor="@color/colorRed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
